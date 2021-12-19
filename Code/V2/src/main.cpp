@@ -237,6 +237,7 @@ void change_configuration_settings(void)
 {
   Serial.println("Some Configurations are missing.\nSetting up Configuration Page");
   WiFi.disconnect();
+  digitalWrite(LED_PIN, HIGH);
 
   /* Configuring Webserver */
   char router_ssid[] = "Name_Plate";
