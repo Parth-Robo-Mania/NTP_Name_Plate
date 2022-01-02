@@ -1,5 +1,3 @@
-#ifndef HTML_PAGE_H
-#define HTML_PAGE_H
 // HTML web page to handle input fields
 const char index_html[] PROGMEM = R"rawliteral(
 <!DOCTYPE html>
@@ -82,4 +80,3 @@ const char index_html[] PROGMEM = R"rawliteral(
 </html>
 
 )rawliteral";
-#endif
