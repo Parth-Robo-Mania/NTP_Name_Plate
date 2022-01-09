@@ -7387,8 +7387,8 @@ LED</text>
 <net name="LED_PIN" class="0">
 <segment>
 <pinref part="U2" gate="G$1" pin="D21"/>
-<wire x1="17.78" y1="19.05" x2="8.89" y2="19.05" width="0.1524" layer="91"/>
-<label x="8.89" y="19.05" size="1.4224" layer="95" font="vector" ratio="10"/>
+<wire x1="17.78" y1="19.05" x2="5.08" y2="19.05" width="0.1524" layer="91"/>
+<label x="5.08" y="19.05" size="1.4224" layer="95" font="vector" ratio="10"/>
 </segment>
 <segment>
 <pinref part="LED3" gate="G$1" pin="A"/>
@@ -7415,11 +7415,6 @@ LED</text>
 </net>
 <net name="INT_BUTTON" class="0">
 <segment>
-<wire x1="60.96" y1="39.37" x2="48.26" y2="39.37" width="0.1524" layer="91"/>
-<pinref part="U2" gate="G$1" pin="D23"/>
-<label x="49.53" y="39.37" size="1.6764" layer="95" font="vector" ratio="10"/>
-</segment>
-<segment>
 <pinref part="SW1" gate="G$1" pin="P$2"/>
 <wire x1="133.35" y1="46.99" x2="137.16" y2="46.99" width="0.1524" layer="91"/>
 <pinref part="R4" gate="G$1" pin="2"/>
@@ -7427,6 +7422,11 @@ LED</text>
 <wire x1="137.16" y1="46.99" x2="154.94" y2="46.99" width="0.1524" layer="91"/>
 <junction x="137.16" y="46.99"/>
 <label x="139.7" y="46.99" size="1.6764" layer="95" font="vector" ratio="10"/>
+</segment>
+<segment>
+<pinref part="U2" gate="G$1" pin="D4"/>
+<wire x1="17.78" y1="39.37" x2="5.08" y2="39.37" width="0.1524" layer="91"/>
+<label x="5.08" y="39.37" size="1.4224" layer="95"/>
 </segment>
 </net>
 <net name="AC1" class="0">

@@ -223,6 +223,7 @@ void notFound(AsyncWebServerRequest *request)
 void change_configuration_settings(void)
 {
     Serial.println("\nDevice Configuration Details Unavailable\nConfiguring WebServer");
+    digitalWrite(LIGHT_RELAY, LOW);
     delay(500);
 
     WiFi.disconnect();
@@ -410,6 +411,17 @@ void basic_setup(void)
     attachInterrupt(digitalPinToInterrupt(INT_BUTTON), change_settings, RISING); // Interrupt button to change configuration settings
     digitalWrite(LIGHT_RELAY, LOW);
     digitalWrite(LED_PIN, LOW);
+    esp_sleep_enable_ext0_wakeup(GPIO_NUM_4, HIGH); // TODO: Change this pin if you decide to choose any other pin
+    wakeup_reason = esp_sleep_get_wakeup_cause();
+    switch (wakeup_reason)
+    {
+    case 2:
+        Serial.println("Wakeup caused by external signal using RTC_CNTL");
+        break;
+    default:
+        Serial.println("Wakeup was not caused by deep sleep");
+        break;
+    }
     read_configuration_details_from_eeprom();
 }
 
@@ -426,10 +438,12 @@ void setup()
 
 void loop()
 {
-    if (interrupt_status)
+    if (interrupt_status) // When INT is triggered in wake mode
     {
         interrupt_status = false;
         change_configuration_settings();
     }
+    else if (wakeup_reason == 2) // When INT is triggered from deep sleep wakeup
+        change_configuration_settings();
     connect_to_wifi_and_fetch_time();
 }

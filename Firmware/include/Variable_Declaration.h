@@ -42,6 +42,7 @@ const char *PARAM_INPUT_3 = "start_hour";
 const char *PARAM_INPUT_4 = "stop_hour";
 const char *PARAM_INPUT_5 = "start_minutes";
 const char *PARAM_INPUT_6 = "stop_minutes";
+esp_sleep_wakeup_cause_t wakeup_reason;
 
 /* -------------------------------------------------------------------------- */
 /*                         CONTROL TIME CONFIGURATION                         */
