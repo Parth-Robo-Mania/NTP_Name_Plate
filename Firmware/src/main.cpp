@@ -433,7 +433,6 @@ void setup()
     Serial.println("\n\nSetting Up Device");
     basic_setup();
     Serial.println("\nInitiating Device");
-    connect_to_wifi_and_fetch_time();
 }
 
 void loop()
